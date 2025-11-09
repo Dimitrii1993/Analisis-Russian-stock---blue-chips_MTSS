@@ -65,7 +65,7 @@ chart.set_facecolor('white')
 
 plt.savefig('mtss_2025.png', dpi = 300)
 
-# Анализ двух графиков динамики 
+# Анализ двух графиков динамики вместе на одной координатной
 mtss_2025.loc[:,'price_close'] = mtss_2025['price_close'].add(3)
 
 fig, chart = plt.subplots(nrows = 1, ncols =1, figsize = (15,8))
@@ -115,6 +115,7 @@ chart.set_facecolor('white')
 
 plt.savefig('mtss_2025.png', dpi = 300)
 
+# График динамики показан с верхними границами цены
 fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,8))
 
 chart.plot(
