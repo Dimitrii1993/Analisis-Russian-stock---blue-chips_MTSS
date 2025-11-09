@@ -26,9 +26,6 @@ mtss.head()
 mtss.tail()
 
 # Линейный график - временная диаграмма - свойства, описать что делает
-# Описать каждую функцию
-# Добавить карту - advance
-
 fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
 
 chart.plot(
