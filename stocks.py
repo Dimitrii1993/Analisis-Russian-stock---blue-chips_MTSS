@@ -159,4 +159,19 @@ chart.set_facecolor('white')
 
 plt.savefig('mtss_2025.png', dpi = 300)
 
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (10,5))
+
+chart.bar(
+    mtss_2025['date'],
+    mtss_2025['volume'], 
+    width = 2,
+    alpha=.1, 
+    color = 'skyblue',
+    edgecolor = 'black')
+
+chart.xaxis.set_major_locator(mdates.YearLocator())
+chart.xaxis.set_minor_locator(mdates.MonthLocator())
+
+plt.savefig('mtss_2025_volume.png', dpi = 300)
+
 
