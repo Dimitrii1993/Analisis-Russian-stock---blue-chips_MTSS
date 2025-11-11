@@ -175,3 +175,46 @@ chart.xaxis.set_minor_locator(mdates.MonthLocator())
 plt.savefig('mtss_2025_volume.png', dpi = 300)
 
 
+name = data['<TICKER>'][0][0:4]
+mask_1 = mtss_2025['date'] > '2025-01-01'
+mask_2 = mtss_2025['date'] < '2025-12-31'
+
+mtss_2025_m = mtss_2025[mask_1 & mask_2]
+
+mtss_2025['year'] = mtss_2025['date'].dt.year
+
+mtss_2025_m['date'] = mtss_2025_m['date'].dt.month
+mtss_2025_m = mtss_2025_m.groupby( by = 'date', as_index = False)['volume'].sum()
+
+fig,chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,8))
+
+chart.bar(
+    mtss_2025_m['date'],
+    mtss_2025_m['volume'],
+    width = 0.9,
+    alpha = .5,
+    color = 'red',
+    edgecolor = 'black')
+
+chart.set_title(f'Объем акций {name} за 2025г.', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight':'bold'})
+chart.set_xlabel('Дата', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+# Установка интервала между метками
+chart.set_yticks(range(500000,20000000,2500000))
+
+
+chart.tick_params(axis='x', 
+                 which='major',
+                 labelsize=10,
+                 pad=1)
+
+chart.tick_params(axis = 'x', rotation = 45)
+
+chart.set_facecolor('white')
+
+plt.savefig('mtss_2025.png', dpi = 300)
+
+
