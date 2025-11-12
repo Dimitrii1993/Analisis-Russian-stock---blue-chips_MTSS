@@ -217,4 +217,45 @@ chart.set_facecolor('white')
 
 plt.savefig('mtss_2025.png', dpi = 300)
 
+mask_1 = mtss_2025['date'] > '2025-01-01'
+mask_2 = mtss_2025['date'] < '2025-12-31'
+mtss_2025_y = mtss_2025[mask_1 & mask_2]
 
+fig, chart = plt.subplots(nrows =1, ncols = 1, figsize = (15,8))
+
+chart.plot(
+    mtss_2025_y['date'],
+    mtss_2025_y['price_open'],
+    label = 'MTSS_2025',
+    marker = 'o',
+    markerfacecolor = 'red',
+    markeredgecolor = 'black',
+    markersize = 3,
+    linestyle = '--',
+    linewidth = 1,
+    alpha = 0.8,
+    color = 'black'
+)
+
+chart.legend()
+
+chart.set_title(f'Акции {name} за 2025г.', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_xlabel('Дата', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+chart.set_yticks(range(150,500,50))
+
+chart.grid(True,axis = 'x', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+chart.grid(True,axis = 'y', linestyle = '-', linewidth = 1, alpha = 0.2, color = 'black')
+
+chart.tick_params(axis = 'x', rotation = 50)
+chart.tick_params(axis = 'y', rotation = 30)
+
+chart.xaxis.set_major_locator(mdates.YearLocator())
+
+chart.xaxis.set_minor_locator(mdates.MonthLocator())
+chart.xaxis.set_minor_formatter(mdates.DateFormatter('%m'))
+
+chart.set_facecolor('white')
+
+plt.savefig('mtss_2025.png', dpi = 300)
