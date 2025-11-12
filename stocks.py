@@ -259,3 +259,43 @@ chart.xaxis.set_minor_formatter(mdates.DateFormatter('%m'))
 chart.set_facecolor('white')
 
 plt.savefig('mtss_2025.png', dpi = 300)
+
+mask_1 = mtss_2025['date'] > '2024-01-01'
+mask_2 = mtss_2025['date'] < '2024-12-31'
+
+mtss_2024 = mtss_2025[mask_1 & mask_2]
+
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,8))
+
+chart.bar(
+    mtss_2024['date'],
+    mtss_2024['volume'],
+    width = 0.9,
+    alpha = .5,
+    edgecolor = 'black',
+    color = 'blue')
+
+chart.set_title(f'{name} 2024г.', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_xlabel('Дата', fontdict = {'family': 'Times New Roman','size': 10, 'weight': 'normal'})
+chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+chart.set_yticks(range(100000,3000000,250000))
+
+chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+chart.tick_params(axis = 'x',
+                  which='major',
+                  labelsize=7) # Уменьшение/увеличение значений x
+chart.tick_params(axis = 'y',
+                  which='major',
+                  labelsize=7) # Уменьшение/увеличение значений y
+
+chart.tick_params(axis = 'x', rotation = 45)
+
+chart.xaxis.set_major_locator(mdates.MonthLocator()) # Редактирует месяцы на каждый 
+chart.xaxis.set_major_formatter(mdates.DateFormatter('%m')) # Формат месяцев
+
+chart.set_facecolor('white')
+
+plt.savefig('mtss_2024_volume.png', dpi = 300)
+
