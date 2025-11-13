@@ -299,3 +299,32 @@ chart.set_facecolor('white')
 
 plt.savefig('mtss_2024_volume.png', dpi = 300)
 
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,8))
+
+chart.boxplot(
+    mtss_2025['price_open'],
+    positions = [2],
+    widths = 0.3,
+    patch_artist = False,
+)
+chart.set_title(f'{name} 2024г.', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman','size': 10, 'weight': 'normal'})
+
+chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+chart.tick_params(axis = 'x',
+                  which='major',
+                  labelsize=7) # Уменьшение/увеличение значений x
+chart.tick_params(axis = 'y',
+                  which='major',
+                  labelsize=7) # Уменьшение/увеличение значений y
+
+chart.tick_params(axis = 'x', rotation = 45)
+
+chart.xaxis.set_major_locator(mdates.MonthLocator()) # Редактирует месяцы на каждый 
+chart.xaxis.set_major_formatter(mdates.DateFormatter('%m')) # Формат месяцев
+
+chart.set_facecolor('white')
+
+plt.savefig('mtss_2024_volume.png', dpi = 300)
+
