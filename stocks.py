@@ -358,3 +358,40 @@ chart.set_facecolor('white')
 
 plt.savefig('mtss_2024_volume.png', dpi = 300)
 
+# ОБОЗНАЧЕНИЕ УРОВНЕЙ ПОДДЕРЖКИ И СОПРОТИВЛЕНИЯ ЗА 2020-2025 ГОД
+
+mask_1 = mtss_2025['date'] > '2020-01-01'
+mask_2 = mtss_2025['date'] < '2025-12-31'
+
+mtss_20_25 = mtss_2025[mask_1 & mask_2]
+mtss_20_25.reset_index(drop = True, inplace = True)
+
+mtss_20_25 = mtss_20_25.copy()
+mtss_20_25['resistance_2'] = 260
+mtss_20_25['support_1'] = 190
+mtss_20_25['support_2'] = 180
+
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
+
+chart.plot(
+    mtss_20_25['date'],
+    mtss_20_25['price_open'],
+    label = 'price_mtss',
+    marker = 'o',
+    markeredgecolor = 'blue',
+    markerfacecolor = 'blue',
+    markersize = 2,
+    linestyle = '--',
+    linewidth = 1,
+    alpha = 0.5, 
+    color = 'black'
+)
+
+chart.fill_between(
+    mtss_20_25['date'],
+    mtss_20_25['resistance_1'],
+    mtss_20_25['resistance_2'],
+    alpha = 0.2,
+    color = 'red'
+)
+
