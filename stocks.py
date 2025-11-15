@@ -395,3 +395,9 @@ chart.fill_between(
     color = 'red'
 )
 
+chart.plot(
+    mtss_20_25['date'],
+    mtss_20_25['resistance_1'],
+    linestyle = '--',
+    color = 'red'
+)
