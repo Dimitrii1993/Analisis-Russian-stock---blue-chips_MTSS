@@ -417,3 +417,10 @@ chart.fill_between(
     alpha = 0.5,
     color = 'yellow'
 )
+
+chart.plot(
+    mtss_20_25['date'],
+    mtss_20_25['support_1'],
+    linestyle = '--',
+    color = 'blue'
+)
