@@ -401,3 +401,11 @@ chart.plot(
     linestyle = '--',
     color = 'red'
 )
+
+chart.fill_between(
+    mtss_20_25['date'],
+    mtss_20_25['resistance_1'],
+    mtss_20_25['resistance_2'],
+    alpha = 0.2,
+    color = 'red'
+)
