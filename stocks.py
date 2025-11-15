@@ -409,3 +409,11 @@ chart.fill_between(
     alpha = 0.2,
     color = 'red'
 )
+
+chart.fill_between(
+    mtss_20_25['date'],
+    mtss_20_25['support_1'],
+    mtss_20_25['support_2'],
+    alpha = 0.5,
+    color = 'yellow'
+)
