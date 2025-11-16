@@ -444,3 +444,16 @@ chart.xaxis.set_major_locator(mdates.YearLocator()) # Редактирует м�
 chart.set_facecolor('white')
 
 plt.savefig('mtss_2024_volume.png', dpi = 300)
+
+mask_1_20 = mtss_20_25['date'] > '2020-01-01'
+mask_2_20 = mtss_20_25['date'] < '2020-12-31'
+
+mtss_20_20 = mtss_20_25[mask_1_20 & mask_2_20]
+
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
+chart.bar(
+    mtss_20_20['date'],
+    mtss_20_20['volume']
+)
+
+chart.xaxis.set_major_locator(mdates.YearLocator()) # Редактирует месяцы на каждый 
