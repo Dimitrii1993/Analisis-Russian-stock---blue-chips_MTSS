@@ -457,3 +457,10 @@ chart.bar(
 )
 
 chart.xaxis.set_major_locator(mdates.YearLocator()) # Редактирует месяцы на каждый 
+
+chart.set_title(f'Объемы акции {name} 2020г.', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Объем', fontdict = {'family': 'Times New Roman','size': 10, 'weight': 'normal'})
+
+chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+
