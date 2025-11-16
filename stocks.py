@@ -424,3 +424,7 @@ chart.plot(
     linestyle = '--',
     color = 'blue'
 )
+chart.set_title(f'{name} 2020 - 2024г.', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman','size': 10, 'weight': 'normal'})
+
+chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
