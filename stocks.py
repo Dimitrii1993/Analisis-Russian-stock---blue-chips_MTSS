@@ -428,3 +428,19 @@ chart.set_title(f'{name} 2020 - 2024г.', fontdict = {'family': 'Times New Roman
 chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman','size': 10, 'weight': 'normal'})
 
 chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+chart.tick_params(axis = 'x',
+                  which='major',
+                  labelsize=7) # Уменьшение/увеличение значений x
+chart.tick_params(axis = 'y',
+                  which='major',
+                  labelsize=7) # Уменьшение/увеличение значений y
+
+chart.tick_params(axis = 'x', rotation = 45)
+
+chart.xaxis.set_major_locator(mdates.YearLocator()) # Редактирует месяцы на каждый 
+
+
+chart.set_facecolor('white')
+
+plt.savefig('mtss_2024_volume.png', dpi = 300)
