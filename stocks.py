@@ -488,4 +488,9 @@ chart.set_ylabel('Объем', fontdict={'family': 'Times New Roman', 'size': 10
 
 chart.grid(True, axis='y', linestyle='--', linewidth=1, alpha=0.2, color='black')
 
-
+chart.tick_params(axis='x',
+                  which='major',
+                  labelsize=7)  # Уменьшение/увеличение значений x
+chart.tick_params(axis='y',
+                  which='major',
+                  labelsize=7)  # Уменьшение/увеличение значений y
