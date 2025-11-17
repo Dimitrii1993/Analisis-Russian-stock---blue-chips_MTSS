@@ -494,3 +494,5 @@ chart.tick_params(axis='x',
 chart.tick_params(axis='y',
                   which='major',
                   labelsize=7)  # Уменьшение/увеличение значений y
+
+chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
