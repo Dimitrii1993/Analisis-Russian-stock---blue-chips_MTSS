@@ -496,3 +496,5 @@ chart.tick_params(axis='y',
                   labelsize=7)  # Уменьшение/увеличение значений y
 
 chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+
+plt.savefig('mtss_2021_volume.png', dpi = 300)
