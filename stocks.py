@@ -498,3 +498,17 @@ chart.tick_params(axis='y',
 chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
 
 plt.savefig('mtss_2021_volume.png', dpi = 300)
+
+mask_1_20 = mtss_20_25['date'] > '2022-01-01'
+mask_2_20 = mtss_20_25['date'] < '2022-12-31'
+
+mtss_20_22 = mtss_20_25[mask_1_20 & mask_2_20]
+
+fig, chart = plt.subplots(nrows=1, ncols=1, figsize=(15, 6))
+
+chart.bar(
+    mtss_20_22['date'],
+    mtss_20_22['volume'])
+
+chart.set_title(f'Объемы акции {name} 2022г.', fontdict={'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Объем', fontdict={'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
