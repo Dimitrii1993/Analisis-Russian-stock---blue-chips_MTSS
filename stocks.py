@@ -512,3 +512,6 @@ chart.bar(
 
 chart.set_title(f'Объемы акции {name} 2022г.', fontdict={'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
 chart.set_ylabel('Объем', fontdict={'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+chart.grid(True, axis='y', linestyle='--', linewidth=1, alpha=0.2, color='black')
+chart.set_yticks(range(200000,3000000,500000))
