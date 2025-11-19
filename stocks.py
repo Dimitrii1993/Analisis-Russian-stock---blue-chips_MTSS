@@ -527,3 +527,34 @@ chart.tick_params(axis='y',
 chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
 
 plt.savefig('mtss_2021_volume.png', dpi = 300)
+
+#%%
+mask_1 = mtss_20_25['date'] > '2023-01-01'
+mask_2 = mtss_20_25['date'] < '2023-12-31'
+
+mtss_20_23 = mtss_20_25[mask_1 & mask_2]
+
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
+
+chart.bar(
+    mtss_20_23['date'],
+    mtss_20_23['volume']
+)
+
+chart.set_title(f'Объемы акции {name} 2023г.', fontdict={'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Объем', fontdict={'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+chart.grid(True, axis='y', linestyle='--', linewidth=1, alpha=0.2, color='black')
+chart.set_yticks(range(200000,3000000,500000))
+
+chart.tick_params(axis='x',
+                  which='major',
+                  labelsize=7)  # Уменьшение/увеличение значений x
+
+chart.tick_params(axis='y',
+                  which='major',
+                  labelsize=7)  # Уменьшение/увеличение значений y
+
+chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+
+plt.savefig('mtss_2021_volume.png', dpi = 300)
