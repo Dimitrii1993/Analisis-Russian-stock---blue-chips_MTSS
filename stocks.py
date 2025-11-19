@@ -581,3 +581,6 @@ chart.tick_params(axis='x',
                   which='major',
                   labelsize=7)  # Уменьшение/увеличение значений x
 
+chart.tick_params(axis='y',
+                  which='major',
+                  labelsize=7)  # Уменьшение/увеличение значений y
