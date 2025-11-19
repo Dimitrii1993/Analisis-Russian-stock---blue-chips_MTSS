@@ -571,4 +571,8 @@ chart.bar(
     mtss_20_23['volume']
 )
 
+chart.set_title(f'Объемы акции {name} 2023г.', fontdict={'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Объем', fontdict={'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+
 
