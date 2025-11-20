@@ -588,3 +588,8 @@ chart.tick_params(axis='y',
 chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
 
 plt.savefig('mtss_2021_volume.png', dpi = 300)
+
+mask_1 = mtss_20_25['date'] > '2024-01-01'
+mask_2 = mtss_20_25['date'] < '2024-12-31'
+
+mtss_20_23 = mtss_20_25[mask_1 & mask_2]
