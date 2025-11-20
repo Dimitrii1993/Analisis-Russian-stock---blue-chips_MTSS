@@ -593,3 +593,14 @@ mask_1 = mtss_20_25['date'] > '2024-01-01'
 mask_2 = mtss_20_25['date'] < '2024-12-31'
 
 mtss_20_23 = mtss_20_25[mask_1 & mask_2]
+
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
+
+chart.bar(
+    mtss_20_23['date'],
+    mtss_20_23['volume']
+)
+
+chart.set_title(f'Объемы акции {name} 2024г.', fontdict={'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Объем', fontdict={'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
