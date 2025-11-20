@@ -431,19 +431,21 @@ chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color
 
 chart.tick_params(axis = 'x',
                   which='major',
-                  labelsize=7) # Уменьшение/увеличение значений x
+                  labelsize=7) 
 chart.tick_params(axis = 'y',
                   which='major',
-                  labelsize=7) # Уменьшение/увеличение значений y
+                  labelsize=7)
 
 chart.tick_params(axis = 'x', rotation = 45)
 
-chart.xaxis.set_major_locator(mdates.YearLocator()) # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator())
 
 
 chart.set_facecolor('white')
 
 plt.savefig('mtss_2024_volume.png', dpi = 300)
+
+# ОБЪЕМЫ АКЦИЙ 
 
 mask_1_20 = mtss_20_25['date'] > '2020-01-01'
 mask_2_20 = mtss_20_25['date'] < '2020-12-31'
@@ -456,7 +458,7 @@ chart.bar(
     mtss_20_20['volume']
 )
 
-chart.xaxis.set_major_locator(mdates.YearLocator()) # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator()) 
 
 chart.set_title(f'Объемы акции {name} 2020г.', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
 chart.set_ylabel('Объем', fontdict = {'family': 'Times New Roman','size': 10, 'weight': 'normal'})
@@ -465,12 +467,12 @@ chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color
 
 chart.tick_params(axis = 'x',
                   which='major',
-                  labelsize=7) # Уменьшение/увеличение значений x
+                  labelsize=7) 
 chart.tick_params(axis = 'y',
                   which='major',
-                  labelsize=7) # Уменьшение/увеличение значений y
+                  labelsize=7) 
 
-chart.xaxis.set_major_locator(mdates.YearLocator()) # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator()) 
 
 mask_1_20 = mtss_20_25['date'] > '2021-01-01'
 mask_2_20 = mtss_20_25['date'] < '2021-12-31'
@@ -490,12 +492,12 @@ chart.grid(True, axis='y', linestyle='--', linewidth=1, alpha=0.2, color='black'
 
 chart.tick_params(axis='x',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений x
+                  labelsize=7) 
 chart.tick_params(axis='y',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений y
+                  labelsize=7) 
 
-chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator())  
 
 plt.savefig('mtss_2021_volume.png', dpi = 300)
 
@@ -518,13 +520,13 @@ chart.set_yticks(range(200000,3000000,500000))
 
 chart.tick_params(axis='x',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений x
+                  labelsize=7) 
 
 chart.tick_params(axis='y',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений y
+                  labelsize=7) 
 
-chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator())  
 
 plt.savefig('mtss_2021_volume.png', dpi = 300)
 
@@ -549,13 +551,13 @@ chart.set_yticks(range(200000,3000000,500000))
 
 chart.tick_params(axis='x',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений x
+                  labelsize=7)  
 
 chart.tick_params(axis='y',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений y
+                  labelsize=7)  
 
-chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator())  
 
 plt.savefig('mtss_2021_volume.png', dpi = 300)
 
@@ -579,13 +581,13 @@ chart.set_yticks(range(200000,3000000,500000))
 
 chart.tick_params(axis='x',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений x
+                  labelsize=7) 
 
 chart.tick_params(axis='y',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений y
+                  labelsize=7) 
 
-chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator()) 
 
 plt.savefig('mtss_2021_volume.png', dpi = 300)
 
@@ -609,13 +611,13 @@ chart.set_yticks(range(200000,3000000,500000))
 
 chart.tick_params(axis='x',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений x
+                  labelsize=7)
 
 chart.tick_params(axis='y',
                   which='major',
-                  labelsize=7)  # Уменьшение/увеличение значений y
+                  labelsize=7) 
 
-chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+chart.xaxis.set_major_locator(mdates.YearLocator()) 
 
 plt.savefig('mtss_2024_volume.png', dpi = 300)
 
