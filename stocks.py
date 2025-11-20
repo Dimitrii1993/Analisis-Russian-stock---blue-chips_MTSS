@@ -611,4 +611,12 @@ chart.tick_params(axis='x',
                   which='major',
                   labelsize=7)  # Уменьшение/увеличение значений x
 
+chart.tick_params(axis='y',
+                  which='major',
+                  labelsize=7)  # Уменьшение/увеличение значений y
+
+chart.xaxis.set_major_locator(mdates.YearLocator())  # Редактирует месяцы на каждый 
+
+plt.savefig('mtss_2024_volume.png', dpi = 300)
+
 
