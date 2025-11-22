@@ -626,3 +626,13 @@ mask_2 = mtss_20_25['date'] < '2025-12-31'
 
 mtss_25 = mtss_20_25[mask_1 & mask_2]
 
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
+
+chart.bar(
+    mtss_25['date'],
+    mtss_25['volume'],
+    width = 0.9,
+    alpha =0.5,
+    edgecolor = 'black',
+    color = 'red')
+
