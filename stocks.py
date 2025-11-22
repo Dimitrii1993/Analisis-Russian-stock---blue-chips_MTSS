@@ -621,4 +621,8 @@ chart.xaxis.set_major_locator(mdates.YearLocator())
 
 plt.savefig('mtss_2024_volume.png', dpi = 300)
 
+mask_1 = mtss_20_25['date'] > '2025-01-01'
+mask_2 = mtss_20_25['date'] < '2025-12-31'
+
+mtss_25 = mtss_20_25[mask_1 & mask_2]
 
