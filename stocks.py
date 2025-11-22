@@ -649,3 +649,15 @@ chart.tick_params(
     which = 'major',
     labelsize = 7
 )
+
+chart.tick_params(
+    axis = 'y',
+    which = 'major',
+    labelsize = 7
+)
+
+chart.tick_params(axis = 'x', rotation = 45)
+chart.tick_params(axis = 'y', rotation = 45)
+
+chart.xaxis.set_major_locator(mdates.YearLocator())
+chart.xaxis.set_major_formatter(mdates.DateFormatter('%m'))
