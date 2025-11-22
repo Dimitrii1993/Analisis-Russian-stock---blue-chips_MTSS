@@ -639,3 +639,13 @@ chart.bar(
 chart.set_title(f'Объем акций {name} 2025г.', fontdict = {'family': 'times New Roman', 'size': 12, 'weight': 'bold'})
 chart.set_xlabel('Дата', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'bold'})
 chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+chart.grid(True, axis='y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+chart.set_yticks(range(200000,3000000,500000))
+
+chart.tick_params(
+    axis = 'x',
+    which = 'major',
+    labelsize = 7
+)
