@@ -636,3 +636,4 @@ chart.bar(
     edgecolor = 'black',
     color = 'red')
 
+
