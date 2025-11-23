@@ -666,3 +666,19 @@ fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
 
 mask_1 = mtss_2025['date'] > '2020-01-01'
 mask_2 = mtss_2025['date'] < '2020-12-31'
+
+mtss_20_plot = mtss_2025[mask_1 & mask_2]
+
+chart.plot(
+    mtss_20_plot['date'],
+    mtss_20_plot['price_open'],
+    label = 'МТС',
+    marker = 'o',
+    markerfacecolor = 'white',
+    markeredgecolor = 'black',
+    markersize = 4,
+    linewidth = 1,
+    linestyle = '--',
+    alpha = 0.5,
+    color = 'black'
+)
