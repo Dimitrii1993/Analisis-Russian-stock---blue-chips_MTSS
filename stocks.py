@@ -738,3 +738,13 @@ chart.set_title(f'Цена акции {name} за 2021г.', fontdict={'family': 
 chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
 chart.set_xlabel('Дата', fontdict={'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
 
+chart.set_yticks(range(150,400,30))
+
+chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+chart.tick_params(
+    axis = 'y',
+    which = 'major',
+    labelsize = 7,
+    rotation = 10)
+
