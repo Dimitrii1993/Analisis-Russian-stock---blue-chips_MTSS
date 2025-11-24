@@ -712,3 +712,10 @@ chart.set_facecolor('yellow')
 
 plt.savefig('mtss_2025_volume.png', dpi = 300)
 
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
+
+mask_1 = mtss_2025['date'] > '2021-01-01'
+mask_2 = mtss_2025['date'] < '2021-12-31'
+
+
+
