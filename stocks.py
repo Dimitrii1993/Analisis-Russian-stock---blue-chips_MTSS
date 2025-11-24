@@ -748,3 +748,15 @@ chart.tick_params(
     labelsize = 7,
     rotation = 10)
 
+chart.tick_params(
+    axis = 'x',
+    which = 'major',
+    labelsize = 7,
+    rotation = 10)
+
+chart.xaxis.set_major_locator(mdates.MonthLocator())
+chart.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
+
+chart.set_facecolor('yellow')
+
+plt.savefig('mtss_2025_volume.png', dpi = 300)
