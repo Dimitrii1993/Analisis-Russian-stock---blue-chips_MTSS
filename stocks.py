@@ -767,3 +767,18 @@ mask_1 = mtss_2025['date'] > '2022-01-01'
 mask_2 = mtss_2025['date'] < '2022-12-31'
 
 mtss_22_plot = mtss_2025[mask_1 & mask_2]
+
+chart.plot(
+    mtss_22_plot['date'],
+    mtss_22_plot['price_open'],
+    label = 'МТС',
+    marker = 'o',
+    markerfacecolor = 'white',
+    markeredgecolor = 'black',
+    markersize = 4,
+    linewidth = 1,
+    linestyle = '--',
+    alpha = 0.5,
+    color = 'black'
+)
+chart.legend()
