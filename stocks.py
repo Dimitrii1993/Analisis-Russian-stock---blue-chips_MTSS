@@ -858,3 +858,10 @@ chart.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
 chart.set_facecolor('yellow')
 
 plt.savefig('mtss_2023_volume.png', dpi = 300)
+
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
+
+mask_1 = mtss_2025['date'] > '2024-01-01'
+mask_2 = mtss_2025['date'] < '2024-12-31'
+
+mtss_24_plot = mtss_2025[mask_1 & mask_2]
