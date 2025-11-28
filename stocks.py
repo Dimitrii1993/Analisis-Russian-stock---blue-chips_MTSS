@@ -911,6 +911,16 @@ mask_2 = mtss_2025['date'] < '2025-12-31'
 
 mtss_25_plot = mtss_2025[mask_1 & mask_2]
 
-chart.set_facecolor('yellow')
-
-plt.savefig('mtss_2024_volume.png', dpi = 300)
+chart.plot(
+    mtss_25_plot['date'],
+    mtss_25_plot['price_open'],
+    label = 'МТС',
+    marker = 'o',
+    markerfacecolor = 'white',
+    markeredgecolor = 'black',
+    markersize = 4,
+    linewidth = 1,
+    linestyle = '--',
+    alpha = 0.5,
+    color = 'black'
+)
