@@ -1050,3 +1050,10 @@ chart.tick_params(
     rotation = 10
 )
 
+chart.xaxis.set_major_locator(mdates.MonthLocator())
+chart.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
+
+chart.set_facecolor('green')
+
+plt.savefig('mtss_2021.png', dpi = 300)
+
