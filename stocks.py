@@ -1018,3 +1018,12 @@ chart.scatter(
     marker = 'o',
     s = 10,
     c = 'black')
+
+chart.plot(
+    mtss_25_plot['date'],
+    mtss_25_plot['price_open'],
+    label = 'MTS_2020',
+    linewidth = 1,
+    linestyle = '--',
+    color = 'black'
+)
