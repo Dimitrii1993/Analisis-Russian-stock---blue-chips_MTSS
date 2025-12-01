@@ -1079,3 +1079,8 @@ chart.plot(
     linestyle = '--',
     color = 'black'
 )
+chart.legend()
+
+chart.set_title(f'Акции {name} за 2021 год ', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'bold'})
+chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+chart.set_xlabel('Дата', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
