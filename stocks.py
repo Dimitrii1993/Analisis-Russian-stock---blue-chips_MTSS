@@ -1137,3 +1137,10 @@ chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10
 chart.set_xlabel('Дата', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
 
 chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
+
+chart.tick_params(
+    axis = 'y', 
+    which = 'major',
+    labelsize = 7,
+    rotation = 10
+)
