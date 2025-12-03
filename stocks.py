@@ -1165,3 +1165,10 @@ mask_1 = mtss_2025['date'] > '2023-01-01'
 mask_2 = mtss_2025['date'] < '2023-12-30'
 
 mtss_23_plot = mtss_2025[mask_1 & mask_2]
+
+chart.scatter(
+    mtss_23_plot['date'],
+    mtss_23_plot['price_open'],
+    marker = 'o',
+    s = 10,
+    c = 'black')
