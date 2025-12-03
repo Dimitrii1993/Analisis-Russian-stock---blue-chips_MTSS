@@ -1172,3 +1172,12 @@ chart.scatter(
     marker = 'o',
     s = 10,
     c = 'black')
+
+chart.plot(
+    mtss_23_plot['date'],
+    mtss_23_plot['price_open'],
+    label = 'MTS_2023',
+    linewidth = 1,
+    linestyle = '--',
+    color = 'black'
+)
