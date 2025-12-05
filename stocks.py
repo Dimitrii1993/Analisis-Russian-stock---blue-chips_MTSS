@@ -1312,4 +1312,4 @@ chart.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
 
 chart.set_facecolor('green')
 
-plt.savefig('mtss_2025.png', dpi = 300)
+plt.savefig('mtss_2025.png', dpi = 300 )
