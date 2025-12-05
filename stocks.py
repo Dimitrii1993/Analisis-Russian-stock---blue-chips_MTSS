@@ -1262,3 +1262,10 @@ chart.set_facecolor('green')
 
 plt.savefig('mtss_2024.png', dpi = 300)
 
+fig, chart = plt. subplots(nrows = 1, ncols = 1, figsize = (15,6))
+
+mask_1 = mtss_2025['date'] > '2025-01-01'
+mask_2 = mtss_2025['date'] < '2025-12-30'
+
+mtss_24_plot = mtss_2025[mask_1 & mask_2]
+
