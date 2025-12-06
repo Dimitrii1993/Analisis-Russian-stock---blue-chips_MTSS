@@ -1299,3 +1299,10 @@ chart.tick_params(
     labelsize = 7,
     rotation = 10
 )
+
+chart.tick_params(
+    axis = 'x',
+    which = 'major',
+    labelsize = 7,
+    rotation = 10
+)
