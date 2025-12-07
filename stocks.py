@@ -1,29 +1,5 @@
 print('welcome to my repo')
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import seaborn as sns
-import plotly.express as px
-
-data = pd.read_csv('mtss_2025.txt', sep = ',')
-data.info()
-
-mtss = pd.DataFrame({
-    'date': data['<DATE>'],
-    'price_open': data['<OPEN>'],
-    'price_close': data['<CLOSE>'],
-    'volume': data['<VOL>'],
-})
-
-mtss['date'] = pd.to_datetime(mtss['date'], format = '%Y%m%d')
-
-mtss['price_open'] = mtss['price_open'].astype('int64')
-mtss['price_close'] = mtss['price_close'].astype('int64')
-mtss['volume'] = mtss['volume'].astype('int64')
-mtss.head()
-mtss.tail()
 
 # Линейный график - временная диаграмма - свойства, описать что делает
 fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
