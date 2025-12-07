@@ -25,7 +25,27 @@ mtss['volume'] = mtss['volume'].astype('int64')
 mtss.head()
 mtss.tail()
 
+# Линейный график - временная диаграмма - свойства, описать что делает
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (15,6))
 
+chart.plot(
+    mtss_2025['date'],
+    mtss_2025['price_open'],
+    label = 'MTSS',
+    marker = 'o',
+    markerfacecolor = 'yellow',
+    markeredgecolor = 'black',
+    markersize = 3,
+    linestyle = '-',
+    linewidth = 1,
+    alpha = .80,
+    color = 'black')
+
+chart.legend()
+
+chart.set_title('Mtss 2023-2025y', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'bold'})
+chart.set_xlabel('Date', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
+chart.set_ylabel('Price', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'normal'})
 
 chart.set_yticks(range(150,400,30))
 
