@@ -1352,3 +1352,9 @@ chart.xaxis.set_minor_formatter(mdates.DateFormatter('%m'))
 chart.set_facecolor('white')
 
 plt.savefig('mtss_2025.png', dpi = 300)
+
+# Разделить график на временной промежуток от 2025-01-01 до 2025-12-31 через фильтры (маски) и записать в переменную mtss_2025 + скинуть индексы
+mask_1 = mtss['date'] >= '2025-01-01'
+mask_2 = mtss['date'] <= '2025-12-31'
+
+mtss_2025 = mtss[mask_1&mask_2].reset_index(drop = True, inplace = False)
