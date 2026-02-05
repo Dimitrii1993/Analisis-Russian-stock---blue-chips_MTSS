@@ -1313,3 +1313,20 @@ chart.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
 chart.set_facecolor('green')
 
 plt.savefig('mtss_2025.png', dpi = 300)
+
+fig, chart = plt.subplots(nrows = 1, ncols = 1, figsize = (20,8))
+
+chart.plot(
+    mtss['date'],
+    mtss['price'],
+    label = 'mtss',
+    
+    marker = 'o',
+    markersize = 2,
+    markerfacecolor = 'yellow',
+    markeredgecolor = 'black',
+    
+    linestyle = '-',
+    linewidth = 1,
+    alpha = .80,
+    color = 'black')
