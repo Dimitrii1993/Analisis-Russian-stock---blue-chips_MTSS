@@ -1344,4 +1344,11 @@ chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.5, color
 
 chart.tick_params(axis = 'x', rotation = 50)
 
+chart.xaxis.set_major_locator(mdates.YearLocator())
+chart.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
+chart.xaxis.set_minor_locator(mdates.MonthLocator()) 
+chart.xaxis.set_minor_formatter(mdates.DateFormatter('%m'))
 
+chart.set_facecolor('white')
+
+plt.savefig('mtss_2025.png', dpi = 300)
