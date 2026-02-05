@@ -1343,3 +1343,5 @@ chart.grid(True, axis = 'x', linestyle = 'None', linewidth = 1, alpha = 0.5, col
 chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.5, color = 'black')
 
 chart.tick_params(axis = 'x', rotation = 50)
+
+
