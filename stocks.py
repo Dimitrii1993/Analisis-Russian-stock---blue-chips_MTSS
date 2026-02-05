@@ -1330,3 +1330,16 @@ chart.plot(
     linewidth = 1,
     alpha = .80,
     color = 'black')
+chart.legend()
+
+chart.set_title('MTSS', fontdict = {'family': 'Serif', 'size': 12, 'weight': 'bold'}, pad = 20)
+chart.set_xlabel('Date', fontdict = {'family': 'Serif', 'size': 12, 'weight': 'bold'})
+chart.set_ylabel('Price', fontdict = {'family': 'Serif', 'size': 12, 'weight': 'normal'})
+
+chart.set_yticks(range(150,400,30))
+
+
+chart.grid(True, axis = 'x', linestyle = 'None', linewidth = 1, alpha = 0.5, color = 'black')
+chart.grid(True, axis = 'y', linestyle = '--', linewidth = 1, alpha = 0.5, color = 'black')
+
+chart.tick_params(axis = 'x', rotation = 50)
