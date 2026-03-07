@@ -1358,3 +1358,22 @@ mask_1 = mtss['date'] >= '2025-01-01'
 mask_2 = mtss['date'] <= '2025-12-31'
 
 mtss_2025 = mtss[mask_1&mask_2].reset_index(drop = True, inplace = False)
+
+# если ещё нет года в отдельной колонке
+stock_magn['year'] = stock_magn['date'].dt.year
+
+year_order = sorted(stock_magn['year'].unique())
+
+sns.boxenplot(
+    data=stock_magn,
+    x="year",          # категория (как clarity в diamonds)
+    y="open",          # численная (как carat)
+    color="y",
+    order=year_order,
+    width_method="linear",
+)
+
+plt.xlabel("Год")
+plt.ylabel("Цена открытия (open)")
+plt.xticks(rotation=45)
+plt.tight_layout()
