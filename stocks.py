@@ -1377,3 +1377,66 @@ plt.xlabel("Год")
 plt.ylabel("Цена открытия (open)")
 plt.xticks(rotation=45)
 plt.tight_layout()
+
+
+from matplotlib.ticker import FuncFormatter
+
+# ==== данные для joint ====
+rs = np.random.RandomState(11)
+x = rs.gamma(2, size=1000)
+y = -.5 * x + rs.normal(size=1000)
+
+# ==== фигура: 1 строка, 2 столбца ====
+fig, (ax_price, ax_joint) = plt.subplots(
+    nrows=1,
+    ncols=2,
+    figsize=(14, 6),
+    gridspec_kw={'width_ratios': [2, 1]}  # левый шире, правый уже
+)
+
+# ==== левый график: цена + объём ====
+ax_price.plot(
+    stock_magn['date'],
+    stock_magn['open'],
+    linestyle='-',
+    linewidth=1,
+    alpha=0.5,
+    color='black',
+    label='MAGN open'
+)
+
+ax_vol = ax_price.twinx()
+ax_vol.bar(
+    stock_magn['date'],
+    stock_magn['volume'],
+    width=0.8,
+    edgecolor='blue',
+    alpha=0.5,
+    color='red',
+    label='Volume'
+)
+
+ax_price.set_xlabel('Дата')
+ax_price.set_ylabel('Цена')
+ax_vol.set_ylabel('Объём')
+
+ax_price.grid(True, axis='x', linestyle='--', linewidth=0.5, alpha=0.5)
+ax_vol.grid(False)
+
+# ==== правый график: hex joint ====
+hb = ax_joint.hexbin(
+    x = stock_magn['open'], 
+    y = stock_magn['open'],
+    gridsize=30,
+    
+)
+ax_joint.set_xlabel('X')
+ax_joint.set_ylabel('Y')
+ax_joint.set_title('Joint hex')
+
+# цветовая шкала сбоку
+cbar = fig.colorbar(hb, ax=ax_joint)
+cbar.set_label('Count')
+
+plt.tight_layout()
+plt.show()
