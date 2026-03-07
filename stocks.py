@@ -1440,3 +1440,39 @@ cbar.set_label('Count')
 
 plt.tight_layout()
 plt.show()
+
+
+from matplotlib.ticker import FuncFormatter
+
+fig, chart = plt. subplots(nrows = 1, ncols = 1, figsize = (10, 6))
+
+chart.plot(
+    stock_magn['date'],
+    stock_magn['open'],
+    
+    linestyle = '-',
+    linewidth = 1,
+    alpha = 0.5,
+    color = 'black'
+)
+
+chart_volume = chart.twinx()
+
+chart_volume.bar(
+    stock_magn['date'],
+    stock_magn['volume'],
+    
+    width = 0.8,
+    edgecolor = 'blue',
+    alpha = 0.5,
+    color = 'red'
+)
+
+rs = np.random.RandomState(11)
+x = rs.gamma(2, size=1000)
+y = -.5 * x + rs.normal(size=1000)
+
+sns.jointplot(x=x, y=y, kind="hex", color="#4CB391")
+
+chart_volume.grid(True, axis = 'x', linestyle = 'None', linewidth = 1, alpha = 0.5, color = 'black')
+chart_volume.grid(True, axis = 'y', linestyle = 'None', linewidth = 1, alpha = 0.5, color = 'black')
