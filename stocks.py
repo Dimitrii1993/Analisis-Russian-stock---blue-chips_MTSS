@@ -1,5 +1,3 @@
-
-
 chart.plot(
     mtss_2025['date'],
     mtss_2025['price_close'],
@@ -13,6 +11,8 @@ chart.legend()
 chart.set_title('MTSS 2023-2025', fontdict = {'family': 'times New Roman', 'size': 12, 'weight': 'bold'})
 chart.set_xlabel('Дата', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
 chart.set_ylabel('Цена', fontdict = {'family': 'Times New Roman', 'size': 10, 'weight': 'normal'})
+
+
 
 chart.set_yticks(range(150,500,30))
 
