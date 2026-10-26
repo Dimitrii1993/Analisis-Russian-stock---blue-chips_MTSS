@@ -17,6 +17,22 @@ chart.set_yticks(range(150,500,30))
 chart.grid(True, axis = 'x', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
 chart.grid(True, axis ='y', linestyle = '--', linewidth = 1, alpha = 0.2, color = 'black')
 
+chart.set_yticks(range(150, 500, 30))
+
+chart.grid(
+    True,
+    linestyle='--',
+    linewidth=0.8,
+    alpha=0.2,
+    color='black'
+)
+
+chart.legend(
+    loc='best',
+    fontsize=10
+)
+
+plt.tight_layout()
 
 chart.plot(
     mtss_2025['date'],
