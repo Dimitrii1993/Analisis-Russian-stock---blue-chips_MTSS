@@ -1,3 +1,52 @@
+fig, chart = plt.subplots(figsize=(12, 6))
+
+chart.plot(
+    mtss_2025['date'],
+    mtss_2025['price_close'],
+    linestyle='-',
+    linewidth=0.8,
+    alpha=0.8,
+    color='red',
+    label='Цена закрытия MTSS'
+)
+
+chart.set_title(
+    'MTSS 2023–2025',
+    fontsize=14,
+    fontweight='bold',
+    family='Times New Roman'
+)
+
+chart.set_xlabel(
+    'Дата',
+    fontsize=10,
+    family='Times New Roman'
+)
+
+chart.set_ylabel(
+    'Цена, руб.',
+    fontsize=10,
+    family='Times New Roman'
+)
+
+chart.set_yticks(range(150, 500, 30))
+
+chart.grid(
+    True,
+    linestyle='--',
+    linewidth=0.8,
+    alpha=0.2,
+    color='black'
+)
+
+chart.legend(
+    loc='best',
+    fontsize=10
+)
+
+plt.tight_layout()
+plt.show()
+
 chart.plot(
     mtss_2025['date'],
     mtss_2025['price_close'],
